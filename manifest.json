@@ -1,15 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Link Convertion",
-  "version": "0.1.0",
-  "content_scripts": [
-    {
-      "js": ["scripts/content.js"],
-      "matches": ["https://in21.leadsquared.com/LeadManagement"]
-    }
-  ],
+  "name": "Link Conversion",
+  "version": "1.0",
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "images/logo.png"
-  }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  },
+  "permissions": ["scripting", "activeTab"]
 }
